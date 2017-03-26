@@ -14,8 +14,15 @@
   color: white;
 }
 
-.App-intro {
-  font-size: large;
+.wrapper {
+  background-color: #F1F1F1;
+}
+.list-title {
+  padding: 80px 0 40px 40px;
+  color: #757575;
+  font-size: 28px;
+  text-align: left;
+  font-weight: 600;
 }
 
 @keyframes App-logo-spin {
