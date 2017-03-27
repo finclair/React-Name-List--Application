@@ -16,13 +16,34 @@
 
 .wrapper {
   background-color: #F1F1F1;
+  min-height: 800px;
 }
+
+.add-new {
+  background: #FFFFFF;
+  margin: 0 50px;
+}
+
 .list-title {
   padding: 80px 0 40px 40px;
   color: #757575;
   font-size: 28px;
   text-align: left;
   font-weight: 600;
+}
+.input-field {
+  margin: 10px 0px 10px 30px;
+  padding: 5px;
+  font-size: 20px;
+  background: #FAFAFA;
+
+}
+.button-add {
+  margin: 10px 30px;
+  padding: 5px;
+  font-size: 20px;
+  background: #EDEDED;
+  color: #858585;
 }
 
 @keyframes App-logo-spin {

@@ -6,10 +6,14 @@ class InputFields extends Component {
   render() {
     return (
       <div>
-        <input placeholder="Full Name" />
-        <input placeholder="E-mail Address" />
-        <input placeholder="Phone Number" />
-        
+        <form className="add-new">
+          <div className="row">
+            <input className="input-field col-sm-2" placeholder="Full Name" />
+            <input className="input-field col-sm-3" placeholder="E-mail Address" />
+            <input className="input-field col-sm-2" placeholder="Phone Number" />
+            <button className="button-add col-sm-2 pull-right">Add new</button>
+          </div>
+        </form>
       </div>
     );
   }
