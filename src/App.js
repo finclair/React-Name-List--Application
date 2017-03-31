@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import logo from './logo.svg';
 import './App.css';
 import InputFields from './Components/InputFields';
+import NameList from './Components/NameList';
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
           <div className="wrapper">
             <div className="list-title">List of participants</div>
             <InputFields />
+            <NameList />
           </div>
         </div>
       </div>

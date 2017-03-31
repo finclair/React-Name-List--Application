@@ -16,7 +16,7 @@
 
 .wrapper {
   background-color: #F1F1F1;
-  min-height: 800px;
+  
 }
 
 .add-new {
@@ -31,13 +31,14 @@
   text-align: left;
   font-weight: 600;
 }
+
 .input-field {
   margin: 10px 0px 10px 30px;
   padding: 7px;
   font-size: 18px;
   background: #FAFAFA;
-
 }
+
 .button-add {
   margin: 10px 30px;
   padding: 5px;
@@ -46,7 +47,59 @@
   color: #858585;
 }
 
+.name-list {
+  margin: 20px 50px;
+  background: #FFFFFF;
+  font-size: 18px;
+}
+
+.person {
+  border-top: thick solid #F1F1F1;
+  border: 1px;
+  padding: 20px 0;
+
+}
+
+.name-column {
+  float: left;
+  padding: 5px 0 5px 35px;
+  width: 20%;
+  text-align: left;
+}
+
+.mail-column {
+  float: left;
+  padding: 5px 0 5px 35px;
+  width: 30%;
+  text-align: left;
+}
+
+.phone-column {
+ float: left;
+ padding: 5px 0 5px 5px;
+ width: 20%;
+ text-align: left;
+}
+
+.buttons-column {
+ float: left;
+ padding: 5px 35px 5px 0;
+ width: 30%;
+ text-align: right;
+}
+
+.button-modify {
+  margin-left: 20px;
+  text-align: right;
+}
+.button-delete {
+  margin-left: 20px;
+  text-align: right;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
