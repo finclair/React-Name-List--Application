@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import NameItem from './NameItem';
 
-const NameList = () => {
-  
-  
+const NameList = (props) => {
+  console.log(props.names[0]);
 
   //Tänne tulee määritellä table sekä kunkin NameItemin palautus
   return (
@@ -50,8 +49,6 @@ const NameList = () => {
           <button className="button-delete">D</button>
         </div>
       </div>
-  
-      
     </div>
    
     
