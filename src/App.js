@@ -14,8 +14,10 @@ class App extends Component {
      this.state = { names: [] };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.renderNames(data_file, (names) => {
+
+      this.setState({ names: names.Rows});
     });
   };
 
