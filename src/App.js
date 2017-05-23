@@ -5,7 +5,8 @@ import './App.css';
 import InputFields from './Components/InputFields';
 import NameList from './Components/NameList';
 
-const data_file = "http://users.metropolia.fi/~klaush/projects/project-files/data.json";
+const data_file = "https://github.com/finclair/React-Name-List-Application/tree/master/src/data.json";
+
 
 class App extends Component {
   constructor(props) {
