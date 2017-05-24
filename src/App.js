@@ -5,7 +5,7 @@ import './App.css';
 import InputFields from './Components/InputFields';
 import NameList from './Components/NameList';
 
-const data_file = "https://github.com/finclair/React-Name-List-Application/tree/master/src/data.json";
+const data_file = './data.json';
 
 
 class App extends Component {
@@ -16,16 +16,17 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.renderNames(data_file, (names) => {
+     this.renderNames(data_file, (names) => {
 
-      this.setState({ names: names.Rows});
-    });
+       this.setState({ names: names.Rows});
+     });
   };
 
   renderNames(file, callback) {
       const httpRequest = new XMLHttpRequest();
       httpRequest.onreadystatechange = () => {
         if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+          console.log(httpRequest.responseText);
           const response = JSON.parse(httpRequest.responseText);
           console.log(response.Rows[0].name);
           callback(response);
