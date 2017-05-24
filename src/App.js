@@ -26,7 +26,6 @@ class App extends Component {
       const httpRequest = new XMLHttpRequest();
       httpRequest.onreadystatechange = () => {
         if (httpRequest.readyState === 4 && httpRequest.status === 200) {
-          console.log(httpRequest.responseText);
           const response = JSON.parse(httpRequest.responseText);
           console.log(response.Rows[0].name);
           callback(response);
