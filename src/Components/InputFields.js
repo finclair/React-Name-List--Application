@@ -3,6 +3,11 @@ import React, { Component } from 'react';
 
 class InputFields extends Component {
 
+  constructor(props) {
+    super(props);
+
+    
+  }
   render() {
     return (
       <div>
