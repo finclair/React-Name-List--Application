@@ -12,13 +12,15 @@ class App extends Component {
   constructor(props) {
     super(props)
 
-     this.state = { names: [] };
+    this.addName = this.addName.bind(this);
+
+    this.state = { names: [] };
   }
 
   componentDidMount() {
-     this.renderNames(data_file, (names) => {
+    this.renderNames(data_file, (names) => {
 
-       this.setState({ names: names.Rows});
+      this.setState({ names: names.Rows });
      });
   };
 
@@ -35,6 +37,12 @@ class App extends Component {
       httpRequest.send();
   }
 
+  addName(newName) {
+    this.state.names.push(newName);
+    this.setState({ names: this.state.names });
+
+  }
+
   render() {
     return (
       <div className="App">
@@ -45,7 +53,9 @@ class App extends Component {
           </div>
           <div className="wrapper">
             <div className="list-title">List of participants</div>
-            <InputFields />
+            <InputFields
+              addingName={this.addName} 
+            />
             <NameList names={ this.state.names }/>
           </div>
         </div>
