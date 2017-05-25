@@ -5,7 +5,7 @@ class InputFields extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {nameInput: '', emailInput: '', phoneInput: '', id: 6};
+    this.state = {name: '', e_mail: '', phone: '', id: 6};
     
     this.onNameInputChange = this.onNameInputChange.bind(this);
     this.onEmailInputChange = this.onEmailInputChange.bind(this);
@@ -17,16 +17,16 @@ class InputFields extends Component {
 
   onNameInputChange(event) {
     
-    this.setState({ nameInput: event.target.value });
+    this.setState({ name: event.target.value });
     
   }
   onEmailInputChange(event) {
-    this.setState({ emailInput: event.target.value });
+    this.setState({ e_mail: event.target.value });
     
   }
 
   onPhoneInputChange(event) {
-    this.setState({ phoneInput: event.target.value });
+    this.setState({ phone: event.target.value });
     
   }
 
@@ -44,15 +44,15 @@ class InputFields extends Component {
           <div className="row">
             <input
               className="input-field col-sm-2" placeholder="Full Name"
-              value={this.state.nameInput}
+              value={this.state.name}
               onChange={this.onNameInputChange} 
              />
             <input className="input-field col-sm-3" placeholder="E-mail Address" 
-              value={this.state.emailInput}
+              value={this.state.e_mail}
               onChange={this.onEmailInputChange} 
             />
             <input className="input-field col-sm-2" placeholder="Phone Number" 
-              value={this.state.phoneInput}
+              value={this.state.phone}
               onChange={this.onPhoneInputChange} 
             />
             <button className="button-add col-sm-2 pull-right">Add new</button>
