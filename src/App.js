@@ -38,6 +38,8 @@ class App extends Component {
   }
 
   addName(newName) {
+    if (newName.name == "" || newName.e_mail == "" || newName.phone == "") { return; }
+    
     this.state.names.push(newName);
     this.setState({ names: this.state.names });
 
