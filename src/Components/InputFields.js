@@ -5,15 +5,13 @@ class InputFields extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {nameInput: '', emailInput: '', phoneInput: ''};
-
+    this.state = {nameInput: '', emailInput: '', phoneInput: '', id: 6};
+    
     this.onNameInputChange = this.onNameInputChange.bind(this);
     this.onEmailInputChange = this.onEmailInputChange.bind(this);
     this.onPhoneInputChange = this.onPhoneInputChange.bind(this);
 
     this.onFormSubmit = this.onFormSubmit.bind(this);
-    
-    
 
   }
 
@@ -33,7 +31,10 @@ class InputFields extends Component {
   }
 
   onFormSubmit(event) {
-    
+    event.preventDefault();
+    this.setState({ id: this.state.id + 1 });
+    this.props.addingName(this.state);
+
   }
 
   render() {
