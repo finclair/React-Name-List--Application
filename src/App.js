@@ -41,16 +41,11 @@ class App extends Component {
     if (newName.name == "" || newName.e_mail == "" || newName.phone == "") { return; }
     const newNames = this.state.names.concat([newName]);
     this.setState({ names: newNames });
-    
-
   }
 
   deleteName(idx) {
-    const newNames = this.state.names.filter((name) => {
-      return name.id !== idx;
-    });
+    const newNames = this.state.names.filter(name => name.id !== idx);
     this.setState({ names: newNames });
-    
   }
 
   render() {
