@@ -47,10 +47,10 @@ class App extends Component {
 
   deleteName(idx) {
     const newNames = this.state.names.filter((name) => {
-      if (name.id !== idx) {
-        return true;
-      } else {
+      if (name.id === idx) {
         return false;
+      } else {
+        return true;
       }
     });
     this.setState({ names: newNames });
