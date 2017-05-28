@@ -4,6 +4,7 @@ const NameListItem = (props) => {
   console.log(props.name);
   
   const name = props.name;
+  const deletingName = props.deletingName;
   return (
     <div className="row person">
       <div className="name-column">{name.name}</div>
@@ -11,7 +12,7 @@ const NameListItem = (props) => {
       <div className="phone-column">{name.phone}</div>
       <div className="buttons-column">
         <button className="button-modify">M</button>
-        <button className="button-delete">D</button>
+        <button onClick={() => deletingName(name.id)} className="button-delete">D</button>
       </div>
     </div>
   );

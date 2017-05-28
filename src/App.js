@@ -12,6 +12,7 @@ class App extends Component {
     super(props)
 
     this.addName = this.addName.bind(this);
+    this.deleteName = this.deleteName.bind(this);
 
     this.state = { names: [] };
   }
@@ -28,7 +29,7 @@ class App extends Component {
       httpRequest.onreadystatechange = () => {
         if (httpRequest.readyState === 4 && httpRequest.status === 200) {
           const response = JSON.parse(httpRequest.responseText);
-          console.log(response.Rows[0].name);
+
           callback(response);
         }
       };
@@ -39,6 +40,19 @@ class App extends Component {
   addName(newName) {
     if (newName.name == "" || newName.e_mail == "" || newName.phone == "") { return; }
     const newNames = this.state.names.concat([newName]);
+    this.setState({ names: newNames });
+    
+
+  }
+
+  deleteName(idx) {
+    const newNames = this.state.names.filter((name) => {
+      if (name.id !== idx) {
+        return true;
+      } else {
+        return false;
+      }
+    });
     this.setState({ names: newNames });
     
   }
@@ -52,7 +66,10 @@ class App extends Component {
             <InputFields
               addingName={this.addName} 
             />
-            <NameList names={ this.state.names }/>
+            <NameList
+             names={ this.state.names }
+             deletingName={this.deleteName}
+             />
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@ import NameListItem from './NameListItem';
 const NameList = (props) => {
   
   const nameItems = props.names.map((name) => {
-    return <NameListItem key={name.id} name={name} />
+    return <NameListItem key={name.id} name={name} deletingName={props.deletingName} />
   });
 
   return (
