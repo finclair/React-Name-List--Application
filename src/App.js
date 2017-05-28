@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import './App.css';
 import InputFields from './Components/InputFields';
 import NameList from './Components/NameList';
@@ -38,7 +37,7 @@ class App extends Component {
   }
 
   addName(newName) {
-    if (newName.name == "" || newName.e_mail == "" || newName.phone == "") { return; }
+    if (newName.name === "" || newName.e_mail === "" || newName.phone === "") { return; }
     const newNames = this.state.names.concat([newName]);
     this.setState({ names: newNames });
   }

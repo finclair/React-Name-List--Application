@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import NameListItem from './NameListItem';
 
 const NameList = (props) => {
