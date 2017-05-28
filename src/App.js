@@ -47,7 +47,7 @@ class App extends Component {
 
   deleteName(idx) {
     const newNames = this.state.names.filter((name) => {
-      return name.id === idx ? false : true;
+      return name.id === idx;
     });
     this.setState({ names: newNames });
     
