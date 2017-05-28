@@ -39,10 +39,9 @@ class App extends Component {
 
   addName(newName) {
     if (newName.name == "" || newName.e_mail == "" || newName.phone == "") { return; }
+    const newNames = this.state.names.concat([newName]);
+    this.setState({ names: newNames });
     
-    this.state.names.push(newName);
-    this.setState({ names: this.state.names });
-
   }
 
   render() {
