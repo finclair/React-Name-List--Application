@@ -1,7 +1,6 @@
 import React from 'react';
 
 const NameListItem = (props) => {
-  console.log(props.name);
   
   const name = props.name;
   const deletingName = props.deletingName;
