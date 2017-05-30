@@ -10,8 +10,8 @@ const NameListItem = (props) => {
       <div className="mail-column">{name.e_mail}</div>
       <div className="phone-column">{name.phone}</div>
       <div className="buttons-column">
-        <button className="button-modify">M</button>
-        <button onClick={() => deletingName(name.id)} className="button-delete">D</button>
+        <button className="button-modify"><span className="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
+        <button onClick={() => deletingName(name.id)} className="button-delete"><span className="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
       </div>
     </div>
   );
