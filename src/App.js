@@ -12,6 +12,7 @@ class App extends Component {
 
     this.addName = this.addName.bind(this);
     this.deleteName = this.deleteName.bind(this);
+    this.sortNames = this.sortNames.bind(this);
 
     this.state = { names: [] };
   }
@@ -42,6 +43,11 @@ class App extends Component {
     this.setState({ names: newNames });
   }
 
+  sortNames() {
+    console.log("in sortNames..");
+
+  }
+
   deleteName(idx) {
     const newNames = this.state.names.filter(name => name.id !== idx);
     this.setState({ names: newNames });
@@ -58,6 +64,7 @@ class App extends Component {
             />
             <NameList
              names={ this.state.names }
+             sortingNames={this.sortNames}
              deletingName={this.deleteName}
              />
           </div>
