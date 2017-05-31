@@ -33,7 +33,7 @@ class InputFields extends Component {
   onFormSubmit(event) {
     event.preventDefault();
     this.setState({ id: this.state.id + 1 });
-    this.props.addingName(this.state);
+    this.props.onFormSubmit(this.state);
 
   }
 

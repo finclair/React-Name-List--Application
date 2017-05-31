@@ -18,13 +18,13 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.renderNames(data_file, (names) => {
+    this.ajaxRequest(data_file, (names) => {
 
       this.setState({ names: names.Rows });
      });
   };
 
-  renderNames(file, callback) {
+  ajaxRequest(file, callback) {
       const httpRequest = new XMLHttpRequest();
       httpRequest.onreadystatechange = () => {
         if (httpRequest.readyState === 4 && httpRequest.status === 200) {
@@ -75,11 +75,11 @@ class App extends Component {
           <div className="wrapper">
             <div className="list-title">List of participants</div>
             <InputFields
-              addingName={this.addName} 
+              onFormSubmit={this.addName} 
             />
             <NameList
              names={ this.state.names }
-             sortingNames={this.sortNames}
+             onNameColumnClick={this.sortNames}
              deletingName={this.deleteName}
              />
           </div>
