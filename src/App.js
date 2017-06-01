@@ -14,7 +14,7 @@ class App extends Component {
     this.deleteName = this.deleteName.bind(this);
     this.sortNames = this.sortNames.bind(this);
 
-    this.state = { names: [] };
+    this.state = { names: [], sortAlphabetically: true };
   }
 
   componentDidMount() {
@@ -43,16 +43,26 @@ class App extends Component {
     this.setState({ names: newNames });
   }
 
-  sortNames() {
+  sortNames(sortAlphabetically) {
     const tempNames = this.state.names;
 
-    tempNames.sort((a, b) => {
+    if(sortAlphabetically === true) {
+      tempNames.sort((a, b) => {
       a = a.name.toLowerCase();
       b = b.name.toLowerCase();
 
       return (a < b) ? -1 : (a > b) ? 1 : 0;
     }); 
-    this.setState({ names: tempNames });
+    this.setState({ names: tempNames, sortAlphabetically: false });
+    } else {
+        tempNames.sort((a, b) => {
+        a = a.name.toLowerCase();
+        b = b.name.toLowerCase();
+
+        return (b < a) ? -1 : (b > a) ? 1 : 0;
+      });
+      this.setState({ names: tempNames, sortAlphabetically: true });
+    }
 
   }
 
@@ -73,6 +83,7 @@ class App extends Component {
             <NameList
              names={ this.state.names }
              onNameColumnClick={this.sortNames}
+             sortAlphabetically={this.state.sortAlphabetically}
              deletingName={this.deleteName}
              />
           </div>
