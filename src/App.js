@@ -44,20 +44,13 @@ class App extends Component {
   }
 
   sortNames() {
-    
     const tempNames = this.state.names;
-    
-    function compareNames(a, b) {
-      a = a.toLowerCase();
-      b = b.toLowerCase();
-      console.log(1 + " " + a);
-      console.log(2 + " " + b);
-
-      return (a < b) ? -1 : (a > b) ? 1 : 0;
-    }
 
     tempNames.sort((a, b) => {
-      return compareNames(a.name, b.name);
+      a = a.name.toLowerCase();
+      b = b.name.toLowerCase();
+
+      return (a < b) ? -1 : (a > b) ? 1 : 0;
     }); 
     this.setState({ names: tempNames });
 
