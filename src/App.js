@@ -43,7 +43,8 @@ class App extends Component {
     this.setState({ names: newNames });
   }
 
-  sortNames(sortAlphabetically) {
+  sortNames() {
+    const sortAlphabetically = this.state.sortAlphabetically;
     const tempNames = this.state.names;
 
     if(sortAlphabetically === true) {
@@ -83,7 +84,6 @@ class App extends Component {
             <NameList
              names={ this.state.names }
              onNameColumnClick={this.sortNames}
-             sortAlphabetically={this.state.sortAlphabetically}
              deletingName={this.deleteName}
              />
           </div>

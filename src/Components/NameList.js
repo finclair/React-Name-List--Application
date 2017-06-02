@@ -7,11 +7,11 @@ const NameList = (props) => {
     return <NameListItem key={name.id} name={name} deletingName={props.deletingName} />
   });
   const onNameColumnClick = props.onNameColumnClick;
-  const sortAlphabetically = props.sortAlphabetically;
+  
   return (
     <div className="name-list group">
       <div className="row ">
-        <div className="name-column-header name-column" onClick={() => onNameColumnClick(sortAlphabetically)}>Name 🡫</div>
+        <div className="name-column-header name-column" onClick={() => onNameColumnClick()}>Name 🡫</div>
         <div className="mail-column">E-mail address</div>
         <div className="phone-column">Phone number</div>
       </div>
