@@ -46,21 +46,17 @@ class App extends Component {
     const sortAlphabetically = this.state.sortAlphabetically;
     const tempPersons = this.state.persons;
 
-    function compare(tempPersons) {
-      tempPersons.sort((sample1, sample2) => {
-        const a = sample1.name.toLowerCase();
-        const b = sample2.name.toLowerCase();
-        
-        return (a < b) ? -1 : (a > b) ? 1 : 0;
-      });
-    }
-
+    tempPersons.sort((sample1, sample2) => {
+      const a = sample1.name.toLowerCase();
+      const b = sample2.name.toLowerCase();
+      
+      return (a < b) ? -1 : (a > b) ? 1 : 0;
+    });
+    
     if (sortAlphabetically === true) {
-      compare(tempPersons);
       this.setState({ persons: tempPersons, sortAlphabetically: false });
     }
     else {
-      compare(tempPersons);
       tempPersons.reverse();
       this.setState({ persons: tempPersons, sortAlphabetically: true });
     }
