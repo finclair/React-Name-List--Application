@@ -48,9 +48,9 @@ class App extends Component {
     const tempNames = this.state.names;
 
     function compare(tempNames) {
-      tempNames.sort((a, b) => {
-        a = a.name.toLowerCase();
-        b = b.name.toLowerCase();
+      tempNames.sort((sample1, sample2) => {
+        const a = sample1.name.toLowerCase();
+        const b = sample2.name.toLowerCase();
         
         return (a < b) ? -1 : (a > b) ? 1 : 0;
       });
