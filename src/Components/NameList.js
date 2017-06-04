@@ -3,8 +3,8 @@ import NameListItem from './NameListItem';
 
 const NameList = (props) => {
 
-  const nameItems = props.names.map((name) => {
-    return <NameListItem key={name.id} name={name} deletingName={props.deletingName} />
+  const nameItems = props.persons.map((person) => {
+    return <NameListItem key={person.id} person={person} deletingPerson={props.deletingPerson} />
   });
   const onNameColumnClick = props.onNameColumnClick;
   
@@ -17,9 +17,7 @@ const NameList = (props) => {
       </div>
       {nameItems}
     </div>
-
   );
-
 };
 
 export default NameList;

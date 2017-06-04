@@ -5,22 +5,21 @@ import NameList from './Components/NameList';
 
 const data_file = './data.json';
 
-
 class App extends Component {
   constructor(props) {
     super(props)
 
-    this.addName = this.addName.bind(this);
-    this.deleteName = this.deleteName.bind(this);
-    this.sortNames = this.sortNames.bind(this);
+    this.addPerson = this.addPerson.bind(this);
+    this.deletePerson = this.deletePerson.bind(this);
+    this.sortPersons = this.sortPersons.bind(this);
 
-    this.state = { names: [], sortAlphabetically: true };
+    this.state = { persons: [], sortAlphabetically: true };
   }
 
   componentDidMount() {
-    this.ajaxRequest(data_file, (names) => {
+    this.ajaxRequest(data_file, (persons) => {
 
-      this.setState({ names: names.Rows });
+      this.setState({ persons: persons.Rows });
      });
   };
 
@@ -37,18 +36,18 @@ class App extends Component {
       httpRequest.send();
   }
 
-  addName(newName) {
-    if (newName.name === "" || newName.e_mail === "" || newName.phone === "") { return; }
-    const newNames = this.state.names.concat([newName]);
-    this.setState({ names: newNames });
+  addPerson(newPerson) {
+    if (newPerson.name === "" || newPerson.e_mail === "" || newPerson.phone === "") { return; }
+    const newPersons = this.state.persons.concat([newPerson]);
+    this.setState({ persons: newPersons });
   }
 
-  sortNames() {
+  sortPersons() {
     const sortAlphabetically = this.state.sortAlphabetically;
-    const tempNames = this.state.names;
+    const tempPersons = this.state.persons;
 
-    function compare(tempNames) {
-      tempNames.sort((sample1, sample2) => {
+    function compare(tempPersons) {
+      tempPersons.sort((sample1, sample2) => {
         const a = sample1.name.toLowerCase();
         const b = sample2.name.toLowerCase();
         
@@ -57,19 +56,19 @@ class App extends Component {
     }
 
     if (sortAlphabetically === true) {
-      compare(tempNames);
-      this.setState({ names: tempNames, sortAlphabetically: false });
+      compare(tempPersons);
+      this.setState({ persons: tempPersons, sortAlphabetically: false });
     }
     else {
-      compare(tempNames);
-      tempNames.reverse();
-      this.setState({ names: tempNames, sortAlphabetically: true });
+      compare(tempPersons);
+      tempPersons.reverse();
+      this.setState({ persons: tempPersons, sortAlphabetically: true });
     }
   }
 
-  deleteName(idx) {
-    const newNames = this.state.names.filter(name => name.id !== idx);
-    this.setState({ names: newNames });
+  deletePerson(idx) {
+    const newPersons = this.state.persons.filter(name => name.id !== idx);
+    this.setState({ persons: newPersons });
   }
 
   render() {
@@ -79,12 +78,12 @@ class App extends Component {
           <div className="wrapper">
             <div className="list-title">List of participants</div>
             <InputFields
-              onFormSubmit={this.addName} 
+              onFormSubmit={this.addPerson} 
             />
             <NameList
-             names={ this.state.names }
-             onNameColumnClick={this.sortNames}
-             deletingName={this.deleteName}
+             persons={ this.state.persons }
+             onNameColumnClick={this.sortPersons}
+             deletingPerson={this.deletePerson}
              />
           </div>
         </div>
