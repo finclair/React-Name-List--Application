@@ -47,24 +47,24 @@ class App extends Component {
     const sortAlphabetically = this.state.sortAlphabetically;
     const tempNames = this.state.names;
 
-    if(sortAlphabetically === true) {
+    function compare(tempNames) {
       tempNames.sort((a, b) => {
-      a = a.name.toLowerCase();
-      b = b.name.toLowerCase();
-
-      return (a < b) ? -1 : (a > b) ? 1 : 0;
-    }); 
-    this.setState({ names: tempNames, sortAlphabetically: false });
-    } else {
-        tempNames.sort((a, b) => {
         a = a.name.toLowerCase();
         b = b.name.toLowerCase();
-
-        return (b < a) ? -1 : (b > a) ? 1 : 0;
+        
+        return (a < b) ? -1 : (a > b) ? 1 : 0;
       });
-      this.setState({ names: tempNames, sortAlphabetically: true });
     }
 
+    if (sortAlphabetically === true) {
+      compare(tempNames);
+      this.setState({ names: tempNames, sortAlphabetically: false });
+    }
+    else {
+      compare(tempNames);
+      tempNames.reverse();
+      this.setState({ names: tempNames, sortAlphabetically: true });
+    }
   }
 
   deleteName(idx) {
