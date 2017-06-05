@@ -66,6 +66,7 @@ class App extends Component {
 
   modifyPerson(idx) {
 
+    this.setState({ isModifying: true });
   }
 
   deletePerson(idx) {
@@ -82,6 +83,7 @@ class App extends Component {
             <InputFields
               onFormSubmit={this.addPerson} 
             />
+            {this.state.isModifying && <ModificationForm />}
             <NameList
              persons={ this.state.persons }
              onNameColumnClick={this.sortPersons}
