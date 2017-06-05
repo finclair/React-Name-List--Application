@@ -16,9 +16,9 @@ const ModificationForm = (props) => {
             <input className="input-field col-sm-2"  
               value={props.phoneEdit}
             />
+            <button className="button-edit col-sm-2 pull-right">Edit</button>
           </div>
         </form>
-      
     </div>
   ); 
 };
