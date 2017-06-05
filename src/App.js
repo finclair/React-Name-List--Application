@@ -15,7 +15,14 @@ class App extends Component {
     this.deletePerson = this.deletePerson.bind(this);
     this.sortPersons = this.sortPersons.bind(this);
     
-    this.state = { persons: [], sortAlphabetically: true };
+    this.state = { 
+      persons: [],
+      sortAlphabetically: true,
+      isModifying: false,
+      nameEdit: "",
+      emailEdit: "",
+      phoneEdit: ""
+    };
   }
 
   componentDidMount() {
@@ -65,7 +72,21 @@ class App extends Component {
   }
 
   modifyPerson(idx) {
+    console.log("Person " + idx + " clicked.");
+    console.log("In function modify");
 
+    const tempVar = this.state.persons.map((person) => {
+      
+      if (idx === person.id) {
+        
+        this.setState({ nameEdit: person.name });
+        this.setState({ emailEdit: person.e_mail });
+        this.setState({ phoneEdit: person.phone });
+        
+        console.log(this.state.nameModify);
+      }
+      return person;
+    });
     this.setState({ isModifying: true });
   }
 
@@ -83,7 +104,7 @@ class App extends Component {
             <InputFields
               onFormSubmit={this.addPerson} 
             />
-            {this.state.isModifying && <ModificationForm />}
+            {this.state.isModifying && <ModificationForm nameEdit={this.state.nameEdit} emailEdit={this.state.emailEdit} phoneEdit={this.state.phoneEdit} />}
             <NameList
              persons={ this.state.persons }
              onNameColumnClick={this.sortPersons}
