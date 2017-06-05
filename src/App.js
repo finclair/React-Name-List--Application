@@ -63,7 +63,7 @@ class App extends Component {
   }
 
   deletePerson(idx) {
-    const newPersons = this.state.persons.filter(name => name.id !== idx);
+    const newPersons = this.state.persons.filter(person => person.id !== idx);
     this.setState({ persons: newPersons });
   }
 
