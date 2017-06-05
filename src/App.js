@@ -10,9 +10,10 @@ class App extends Component {
     super(props)
 
     this.addPerson = this.addPerson.bind(this);
+    this.modifyPerson = this.modifyPerson.bind(this);
     this.deletePerson = this.deletePerson.bind(this);
     this.sortPersons = this.sortPersons.bind(this);
-
+    
     this.state = { persons: [], sortAlphabetically: true };
   }
 
@@ -62,6 +63,10 @@ class App extends Component {
     }
   }
 
+  modifyPerson(idx) {
+
+  }
+
   deletePerson(idx) {
     const newPersons = this.state.persons.filter(person => person.id !== idx);
     this.setState({ persons: newPersons });
@@ -80,6 +85,7 @@ class App extends Component {
              persons={ this.state.persons }
              onNameColumnClick={this.sortPersons}
              deletingPerson={this.deletePerson}
+             modifyingPerson={this.modifyPerson}
              />
           </div>
         </div>

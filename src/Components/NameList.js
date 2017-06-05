@@ -4,7 +4,7 @@ import NameListItem from './NameListItem';
 const NameList = (props) => {
 
   const nameItems = props.persons.map((person) => {
-    return <NameListItem key={person.id} person={person} deletingPerson={props.deletingPerson} />
+    return <NameListItem key={person.id} person={person} deletingPerson={props.deletingPerson} modifyingPerson={props.modifyingPerson}/>
   });
   const onNameColumnClick = props.onNameColumnClick;
   
