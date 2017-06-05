@@ -18,7 +18,7 @@ class App extends Component {
     this.state = { 
       persons: [],
       sortAlphabetically: true,
-      isModifying: false,
+      isEditing: false,
       nameEdit: "",
       emailEdit: "",
       phoneEdit: ""
@@ -104,7 +104,7 @@ class App extends Component {
             <InputFields
               onFormSubmit={this.addPerson} 
             />
-            {this.state.isModifying && <ModificationForm 
+            {this.state.isEditing && <ModificationForm 
               nameEdit={this.state.nameEdit}
               emailEdit={this.state.emailEdit}
               phoneEdit={this.state.phoneEdit} 
