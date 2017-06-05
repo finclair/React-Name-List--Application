@@ -11,7 +11,7 @@ class App extends Component {
     super(props)
 
     this.addPerson = this.addPerson.bind(this);
-    this.modifyPerson = this.modifyPerson.bind(this);
+    this.showEditForm = this.showEditForm.bind(this);
     this.deletePerson = this.deletePerson.bind(this);
     this.sortPersons = this.sortPersons.bind(this);
     
@@ -71,7 +71,7 @@ class App extends Component {
     }
   }
 
-  modifyPerson(idx) {
+  showEditForm(idx) {
     console.log("Person " + idx + " clicked.");
     console.log("In function modify");
 
@@ -104,12 +104,16 @@ class App extends Component {
             <InputFields
               onFormSubmit={this.addPerson} 
             />
-            {this.state.isModifying && <ModificationForm nameEdit={this.state.nameEdit} emailEdit={this.state.emailEdit} phoneEdit={this.state.phoneEdit} />}
+            {this.state.isModifying && <ModificationForm 
+              nameEdit={this.state.nameEdit}
+              emailEdit={this.state.emailEdit}
+              phoneEdit={this.state.phoneEdit} 
+            />}
             <NameList
              persons={ this.state.persons }
              onNameColumnClick={this.sortPersons}
              deletingPerson={this.deletePerson}
-             modifyingPerson={this.modifyPerson}
+             showEditForm={this.showEditForm}
              />
           </div>
         </div>
