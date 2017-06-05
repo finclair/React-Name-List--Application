@@ -35,6 +35,11 @@
   color: #858585;
 }
 
+.form-modify {
+  background: turquoise;
+  margin: 20px 50px;
+}
+
 .name-list {
   margin: 20px 50px;
   background: #FFFFFF;
