@@ -4,7 +4,7 @@ const ModificationForm = (props) => {
   console.log(props);
   return(
     <div>
-      <form className="form-modify">
+      <form className="form-edit">
         <div className="row">
             <input
               className="input-field col-sm-2" 
