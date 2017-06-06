@@ -87,7 +87,7 @@ class App extends Component {
       }
       return person;
     });
-    this.setState({ isModifying: true });
+    this.setState({ isEditing: true });
   }
 
   deletePerson(idx) {
