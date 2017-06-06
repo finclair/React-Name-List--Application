@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import InputFields from './Components/InputFields';
 import NameList from './Components/NameList';
-import ModificationForm from './Components/EditingForm';
+import EditingForm from './Components/EditingForm';
 
 const data_file = './data.json';
 
@@ -104,7 +104,7 @@ class App extends Component {
             <InputFields
               onFormSubmit={this.addPerson} 
             />
-            {this.state.isEditing && <ModificationForm 
+            {this.state.isEditing && <EditingForm
               nameEdit={this.state.nameEdit}
               emailEdit={this.state.emailEdit}
               phoneEdit={this.state.phoneEdit} 
