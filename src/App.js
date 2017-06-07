@@ -72,14 +72,16 @@ class App extends Component {
 
   showEditForm(idx) {
 
-    const tempVar = this.state.persons.map((person) => {
+    const person = this.state.persons.filter((person) => {
+        return person.id === idx;
+    });
+    this.setState({ idEdit: person[0].id });
+    this.setState({ nameEdit: person[0].name });
+    this.setState({ emailEdit: person[0].e_mail });
+    this.setState({ phoneEdit: person[0].phone });
 
-      if (idx === person.id) {
-        
-        this.setState({ idEdit: person.id });
-        this.setState({ nameEdit: person.name });
-        this.setState({ emailEdit: person.e_mail });
-        this.setState({ phoneEdit: person.phone });
+    this.setState({ isEditing: true });
+  }
 
         
       }
