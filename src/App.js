@@ -19,9 +19,6 @@ class App extends Component {
       persons: [],
       sortAlphabetically: true,
       isEditing: false,
-      nameEdit: "",
-      emailEdit: "",
-      phoneEdit: ""
 
     };
   }
