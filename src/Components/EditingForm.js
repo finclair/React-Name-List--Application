@@ -4,6 +4,7 @@ class EditingForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      id: props.idEdit,
       name: props.nameEdit,
       email: props.emailEdit,
       phone: props.phoneEdit
