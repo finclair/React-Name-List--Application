@@ -12,6 +12,13 @@ class EditingForm extends Component {
     this.onNameInputChange = this.onNameInputChange.bind(this);
     this.onEmailInputChange = this.onEmailInputChange.bind(this);
     this.onPhoneInputChange = this.onPhoneInputChange.bind(this);
+    this.onEditFormSubmit = this.onEditFormSubmit.bind(this);
+
+  }
+
+  onEditFormSubmit(event) {
+    event.preventDefault();
+    this.props.onEditFormSubmit(this.state);
   }
 
   onNameInputChange(event) {
@@ -27,7 +34,7 @@ class EditingForm extends Component {
   render() {
     return(
       <div>
-        <form className="form-edit">
+        <form className="form-edit" onSubmit={this.onEditFormSubmit}>
           <div className="row">
               <input
                 className="input-field col-sm-2" 
