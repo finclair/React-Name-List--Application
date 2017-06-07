@@ -22,6 +22,7 @@ class App extends Component {
       nameEdit: "",
       emailEdit: "",
       phoneEdit: ""
+
     };
   }
 
@@ -72,18 +73,16 @@ class App extends Component {
   }
 
   showEditForm(idx) {
-    console.log("Person " + idx + " clicked.");
-    console.log("In function modify");
 
     const tempVar = this.state.persons.map((person) => {
-      
+
       if (idx === person.id) {
         
         this.setState({ nameEdit: person.name });
         this.setState({ emailEdit: person.e_mail });
         this.setState({ phoneEdit: person.phone });
+
         
-        console.log(this.state.nameModify);
       }
       return person;
     });
