@@ -76,6 +76,7 @@ class App extends Component {
 
       if (idx === person.id) {
         
+        this.setState({ idEdit: person.id });
         this.setState({ nameEdit: person.name });
         this.setState({ emailEdit: person.e_mail });
         this.setState({ phoneEdit: person.phone });
@@ -102,9 +103,10 @@ class App extends Component {
               onFormSubmit={this.addPerson} 
             />
             {this.state.isEditing && <EditingForm
+              idEdit={this.state.idEdit}
               nameEdit={this.state.nameEdit}
               emailEdit={this.state.emailEdit}
-              phoneEdit={this.state.phoneEdit} 
+              phoneEdit={this.state.phoneEdit}
               onEditFormSubmit={this.editPerson} 
             />}
             <NameList
