@@ -14,6 +14,7 @@ class App extends Component {
     this.showEditForm = this.showEditForm.bind(this);
     this.deletePerson = this.deletePerson.bind(this);
     this.sortPersons = this.sortPersons.bind(this);
+    this.editPerson = this.editPerson.bind(this);
     
     this.state = { 
       persons: [],
@@ -104,6 +105,7 @@ class App extends Component {
               nameEdit={this.state.nameEdit}
               emailEdit={this.state.emailEdit}
               phoneEdit={this.state.phoneEdit} 
+              onEditFormSubmit={this.editPerson} 
             />}
             <NameList
              persons={ this.state.persons }
