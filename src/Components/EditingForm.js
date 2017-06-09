@@ -6,7 +6,7 @@ class EditingForm extends Component {
     this.state = {
       id: props.idEdit,
       name: props.nameEdit,
-      email: props.emailEdit,
+      e_mail: props.emailEdit,
       phone: props.phoneEdit
     } 
     this.onNameInputChange = this.onNameInputChange.bind(this);
@@ -25,7 +25,7 @@ class EditingForm extends Component {
     this.setState({ name: event.target.value });
   }
   onEmailInputChange(event) {
-    this.setState({ email: event.target.value });
+    this.setState({ e_mail: event.target.value });
   }
   onPhoneInputChange(event) {
     this.setState({ phone: event.target.value });
@@ -42,7 +42,7 @@ class EditingForm extends Component {
                 onChange={this.onNameInputChange} 
               />
               <input className="input-field col-sm-3" 
-                value={this.state.email}
+                value={this.state.e_mail}
                 onChange={this.onEmailInputChange} 
               />
               <input className="input-field col-sm-2"  
