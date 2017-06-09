@@ -70,10 +70,13 @@ class App extends Component {
 
   showEditForm(idx) {
     if (this.state.isEditing) { return; }
-
-    const person = this.state.persons.filter(person => person.id === idx);
-  
-    this.setState({ idEdit: person[0].id, nameEdit: person[0].name, emailEdit: person[0].e_mail, phoneEdit: person[0].phone });
+    
+    function findCorrectPerson(person) {
+      return person.id === idx;
+    }
+    const person = this.state.persons.find(findCorrectPerson, idx);
+ 
+    this.setState({ idEdit: person.id, nameEdit: person.name, emailEdit: person.e_mail, phoneEdit: person.phone });
 
     const newPersons = this.state.persons.filter(person => person.id !== idx);
     this.setState({persons: newPersons});
