@@ -98,7 +98,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <div className="container">
+        <div className="container">
           <div className="wrapper">
             <div className="list-title">List of participants</div>
             <InputFields
@@ -112,11 +112,11 @@ class App extends Component {
               onEditFormSubmit={this.editPerson} 
             />}
             <NameList
-             persons={ this.state.persons }
-             onNameColumnClick={this.sortPersons}
-             deletingPerson={this.deletePerson}
-             showEditForm={this.showEditForm}
-             />
+            persons={ this.state.persons }
+            onNameColumnClick={this.sortPersons}
+            deletingPerson={this.deletePerson}
+            showEditForm={this.showEditForm}
+            />
           </div>
         </div>
       </div>
