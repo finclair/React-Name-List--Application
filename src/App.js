@@ -36,7 +36,6 @@ class App extends Component {
       httpRequest.onreadystatechange = () => {
         if (httpRequest.readyState === 4 && httpRequest.status === 200) {
           const response = JSON.parse(httpRequest.responseText);
-
           callback(response);
         }
       };
@@ -71,20 +70,16 @@ class App extends Component {
   }
 
   showEditForm(idx) {
-
     if (this.state.isEditing) { return; }
 
-    const person = this.state.persons.filter((person) => {
-        return person.id === idx;
-    });
+    const person = this.state.persons.filter(person => person.id === idx);
+  
     this.setState({ idEdit: person[0].id });
     this.setState({ nameEdit: person[0].name });
     this.setState({ emailEdit: person[0].e_mail });
     this.setState({ phoneEdit: person[0].phone });
 
-    const newPersons = this.state.persons.filter((person) => {
-        return person.id !== idx;
-    });
+    const newPersons = this.state.persons.filter(person => person.id !== idx);
     this.setState({persons: newPersons});
     this.setState({ isEditing: true });
   }
