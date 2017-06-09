@@ -13,14 +13,12 @@ class EditingForm extends Component {
     this.onEmailInputChange = this.onEmailInputChange.bind(this);
     this.onPhoneInputChange = this.onPhoneInputChange.bind(this);
     this.onEditFormSubmit = this.onEditFormSubmit.bind(this);
-
   }
 
   onEditFormSubmit(event) {
     event.preventDefault();
     this.props.onEditFormSubmit(this.state);
   }
-
   onNameInputChange(event) {
     this.setState({ name: event.target.value });
   }

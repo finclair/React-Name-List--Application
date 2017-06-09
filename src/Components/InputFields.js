@@ -12,29 +12,22 @@ class InputFields extends Component {
     this.onPhoneInputChange = this.onPhoneInputChange.bind(this);
 
     this.onFormSubmit = this.onFormSubmit.bind(this);
-
   }
 
   onNameInputChange(event) {
-    
     this.setState({ name: event.target.value });
-    
   }
+
   onEmailInputChange(event) {
     this.setState({ e_mail: event.target.value });
-    
   }
-
   onPhoneInputChange(event) {
     this.setState({ phone: event.target.value });
-    
   }
-
   onFormSubmit(event) {
     event.preventDefault();
     this.setState({ id: this.state.id + 1 });
     this.props.onFormSubmit(this.state);
-
   }
 
   render() {
