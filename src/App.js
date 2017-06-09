@@ -73,10 +73,7 @@ class App extends Component {
 
     const person = this.state.persons.filter(person => person.id === idx);
   
-    this.setState({ idEdit: person[0].id });
-    this.setState({ nameEdit: person[0].name });
-    this.setState({ emailEdit: person[0].e_mail });
-    this.setState({ phoneEdit: person[0].phone });
+    this.setState({ idEdit: person[0].id, nameEdit: person[0].name, emailEdit: person[0].e_mail, phoneEdit: person[0].phone });
 
     const newPersons = this.state.persons.filter(person => person.id !== idx);
     this.setState({persons: newPersons});
