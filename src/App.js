@@ -72,6 +72,8 @@ class App extends Component {
 
   showEditForm(idx) {
 
+    if (this.state.isEditing) { return; }
+
     const person = this.state.persons.filter((person) => {
         return person.id === idx;
     });
