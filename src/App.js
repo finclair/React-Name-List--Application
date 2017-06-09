@@ -87,6 +87,11 @@ class App extends Component {
     this.setState({ isEditing: true });
   }
 
+  editPerson(editedData) {
+
+      const newPersons = this.state.persons.concat([editedData]);
+      this.setState({ persons: newPersons });
+      this.setState({ isEditing: false }); 
   }
 
   deletePerson(idx) {
