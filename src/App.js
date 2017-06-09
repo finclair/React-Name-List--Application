@@ -80,14 +80,13 @@ class App extends Component {
     this.setState({ emailEdit: person[0].e_mail });
     this.setState({ phoneEdit: person[0].phone });
 
+    const newPersons = this.state.persons.filter((person) => {
+        return person.id !== idx;
+    });
+    this.setState({persons: newPersons});
     this.setState({ isEditing: true });
   }
 
-        
-      }
-      return person;
-    });
-    this.setState({ isEditing: true });
   }
 
   deletePerson(idx) {
