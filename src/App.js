@@ -43,7 +43,6 @@ class App extends Component {
   }
 
   addPerson(newPerson) {
-    if (newPerson.name === "" || newPerson.e_mail === "" || newPerson.phone === "") { return; }
     const newPersons = this.state.persons.concat([newPerson]);
     this.setState({ persons: newPersons });
   }

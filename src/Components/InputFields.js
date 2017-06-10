@@ -26,6 +26,7 @@ class InputFields extends Component {
   }
   onFormSubmit(event) {
     event.preventDefault();
+    if (this.state.name === "" || this.state.e_mail === "" || this.state.phone === "") { return; }
     this.setState({ id: this.state.id + 1 });
     this.props.onFormSubmit(this.state);
     this.setState({name: '', e_mail: '', phone: '',});
