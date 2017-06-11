@@ -121,6 +121,7 @@ class App extends Component {
             onNameColumnClick={this.sortPersons}
             deletingPerson={this.deletePerson}
             showEditForm={this.showEditForm}
+            sortAlphabetically={this.state.sortAlphabetically}
             />
           </div>
         </div>
