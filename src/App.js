@@ -78,7 +78,7 @@ class App extends Component {
     this.setState({ 
       idEdit: person.id,
       nameEdit: person.name,
-      mailEdit: person.e_mail,
+      emailEdit: person.e_mail,
       phoneEdit: person.phone,
       isEditing: true
     });
