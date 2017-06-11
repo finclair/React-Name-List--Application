@@ -17,6 +17,7 @@ class EditingForm extends Component {
 
   onEditFormSubmit(event) {
     event.preventDefault();
+    if (this.state.name === "" || this.state.e_mail === "" || this.state.phone === "") { return; }
     this.props.onEditFormSubmit(this.state);
   }
   onNameInputChange(event) {
