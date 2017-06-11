@@ -67,13 +67,13 @@ class App extends Component {
     }
   }
 
-  showEditForm(idx) {
+  showEditForm(personId) {
     if (this.state.isEditing) { return; }
     
     function findCorrectPerson(person) {
-      return person.id === idx;
+      return person.id === personId;
     }
-    const person = this.state.persons.find(findCorrectPerson, idx);
+    const person = this.state.persons.find(findCorrectPerson);
 
     this.setState({ idEdit: person.id, nameEdit: person.name, emailEdit: person.e_mail, phoneEdit: person.phone });
     this.setState({ isEditing: true });
