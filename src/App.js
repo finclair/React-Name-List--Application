@@ -74,19 +74,25 @@ class App extends Component {
       return person.id === idx;
     }
     const person = this.state.persons.find(findCorrectPerson, idx);
- 
-    this.setState({ idEdit: person.id, nameEdit: person.name, emailEdit: person.e_mail, phoneEdit: person.phone });
 
-    const newPersons = this.state.persons.filter(person => person.id !== idx);
-    this.setState({persons: newPersons});
+    this.setState({ idEdit: person.id, nameEdit: person.name, emailEdit: person.e_mail, phoneEdit: person.phone });
     this.setState({ isEditing: true });
   }
 
   editPerson(editedData) {
+    
+    const temp = this.state.persons.map((person) => {
+      
+      if(editedData.id === person.id) {
+        person.name = editedData.name;
+        person.e_mail = editedData.e_mail;
+        person.phone = editedData.phone;
 
-      const newPersons = this.state.persons.concat([editedData]);
-      this.setState({ persons: newPersons });
-      this.setState({ isEditing: false }); 
+        return temp;
+      }
+    });
+    this.setState({ isEditing: false }); 
+    
   }
 
   deletePerson(idx) {
