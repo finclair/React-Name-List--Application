@@ -86,19 +86,20 @@ class App extends Component {
   }
 
   editPerson(editedData) {
-    
-    const temp = this.state.persons.map((person) => {
-      
-      if(editedData.id === person.id) {
-        person.name = editedData.name;
-        person.e_mail = editedData.e_mail;
-        person.phone = editedData.phone;
+    const editedPersons = this.state.persons.map((person) => {
+      if (editedData.id === person.id) {
+        return {
+          id: editedData.id,
+          name: editedData.name,
+          e_mail: editedData.e_mail,
+          phone: editedData.phone
+        };
 
-        return temp;
+      } else {
+        return person;
       }
     });
-    this.setState({ isEditing: false }); 
-    
+    this.setState({ persons: editedPersons, isEditing: false }); 
   }
 
   deletePerson(idx) {
