@@ -62,7 +62,7 @@ class App extends Component {
       this.setState({ persons: sortedPersons, sortAlphabetically: false });
     }
     else {
-      tempPersons.reverse();
+      sortedPersons.reverse();
       this.setState({ persons: sortedPersons, sortAlphabetically: true });
     }
   }
