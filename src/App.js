@@ -99,8 +99,8 @@ class App extends Component {
     this.setState({ persons: editedPersons, editingId: -1 }); 
   }
 
-  deletePerson(idx) {
-    const newPersons = this.state.persons.filter(person => person.id !== idx);
+  deletePerson(personId) {
+    const newPersons = this.state.persons.filter(person => person.id !== personId);
     this.setState({ persons: newPersons });
   }
 
