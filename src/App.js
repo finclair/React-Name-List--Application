@@ -116,13 +116,6 @@ class App extends Component {
             <InputFields
               onFormSubmit={this.addPerson} 
             />
-            {this.state.isEditing && <EditingForm
-              idEdit={this.state.idEdit}
-              nameEdit={this.state.nameEdit}
-              emailEdit={this.state.emailEdit}
-              phoneEdit={this.state.phoneEdit}
-              onEditFormSubmit={this.editPerson} 
-            />}
             <NameList
             persons={ this.state.persons }
             onNameColumnClick={this.sortPersons}
