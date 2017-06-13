@@ -36,15 +36,7 @@ class NameListItem extends Component {
   render() {
     return (
       <div>
-      {this.state.id !== this.state.editingId ? <div className="row person">
-          <div className="name-column">{this.state.name}</div>
-          <div className="mail-column">{this.state.e_mail}</div>
-          <div className="phone-column">{this.state.phone}</div>
-          <div className="buttons-column">
-            <button onClick={this.showEditForm} className="button-modify"><span className="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
-            <button onClick={() => this.state.deletingPerson(this.state.id)} className="button-delete"><span className="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-          </div>
-        </div> : <div>
+      {this.state.id === this.state.editingId ? <div>
             <form className="form-edit" onSubmit={this.onEditFormSubmit}>
               <div className="row">
                 <input
@@ -63,7 +55,15 @@ class NameListItem extends Component {
                 <button className="button-edit col-sm-2 pull-right">Edit</button>
               </div>
             </form>
-          </div>}
+          </div> : <div className="row person">
+          <div className="name-column">{this.state.name}</div>
+          <div className="mail-column">{this.state.e_mail}</div>
+          <div className="phone-column">{this.state.phone}</div>
+          <div className="buttons-column">
+            <button onClick={this.showEditForm} className="button-modify"><span className="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
+            <button onClick={() => this.state.deletingPerson(this.state.id)} className="button-delete"><span className="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+          </div>
+        </div>}
       </div>
     );
   }    
