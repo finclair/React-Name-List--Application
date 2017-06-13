@@ -74,7 +74,8 @@ class NameListItem extends Component {
                   value={this.state.phone}
                   onChange={this.onPhoneInputChange}
                 />
-                <button className="button-save-changes pull-right"><span className="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span></button>
+                <button className="button-save-changes"><span className="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span></button>
+                <button className="button-discard-changes "><span className="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
               </div>
             </form>
           </div> : <div className="row person">
