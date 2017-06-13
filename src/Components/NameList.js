@@ -9,6 +9,7 @@ const NameList = (props) => {
             deletingPerson={props.deletingPerson}
             showEditForm={props.showEditForm} 
             editingId={props.editingId}
+            onEditFormSubmit={props.onEditFormSubmit} 
             />
   });
   const onNameColumnClick = props.onNameColumnClick;

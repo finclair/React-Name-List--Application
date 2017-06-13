@@ -4,26 +4,23 @@ class NameListItem extends Component {
   
   constructor(props) {
     super(props);
-
+    
     this.state = {
       id: this.props.person.id,
       name: this.props.person.name,
       e_mail: this.props.person.e_mail,
       phone: this.props.person.phone,
       deletingPerson: props.deletingPerson,
-      editingId: this.props.editingId,
     }
     this.showEditForm = this.showEditForm.bind(this);
 
-  }
-
-  showEditForm(event) {
-    event.preventDefault();
-    this.props.showEditForm(this.state.id);
+    this.onNameInputChange = this.onNameInputChange.bind(this);
+    this.onEmailInputChange = this.onEmailInputChange.bind(this);
+    this.onPhoneInputChange = this.onPhoneInputChange.bind(this);
+    this.onEditFormSubmit = this.onEditFormSubmit.bind(this);
   }
 
   componentWillReceiveProps(newprops) {
-    console.log(newprops);
     this.setState({
       id: newprops.person.id,
       name: newprops.person.name,
@@ -32,6 +29,27 @@ class NameListItem extends Component {
       editingId: newprops.editingId,
     })
   }
+
+  showEditForm(event) {
+    event.preventDefault();
+    this.props.showEditForm(this.state.id);
+  }
+
+  onEditFormSubmit(event) {
+    event.preventDefault();
+    if (this.state.name === "" || this.state.e_mail === "" || this.state.phone === "") { return; }
+    this.props.onEditFormSubmit(this.state);
+  }
+  onNameInputChange(event) {
+    this.setState({ name: event.target.value });
+  }
+  onEmailInputChange(event) {
+    this.setState({ e_mail: event.target.value });
+  }
+  onPhoneInputChange(event) {
+    this.setState({ phone: event.target.value });
+  }
+
 
   render() {
     return (

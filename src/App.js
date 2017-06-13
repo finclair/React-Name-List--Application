@@ -130,6 +130,8 @@ class App extends Component {
             showEditForm={this.showEditForm}
             sortAlphabetically={this.state.sortAlphabetically}
             editingId={this.state.editingId}
+
+            onEditFormSubmit={this.editPerson}
             />
           </div>
         </div>
