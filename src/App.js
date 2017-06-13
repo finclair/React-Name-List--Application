@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import InputFields from './Components/InputFields';
 import NameList from './Components/NameList';
-import EditingForm from './Components/EditingForm';
 
 const data_file = './data.json';
 
