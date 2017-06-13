@@ -4,7 +4,6 @@
 
 .wrapper {
   background-color: #F1F1F1;
-  
 }
 
 .add-new {
@@ -58,20 +57,18 @@
   border-top: thick solid #F1F1F1;
   border: 1px;
   padding: 20px 0;
-
 }
+
 .name-column-header {
   cursor: pointer;
   cursor: hand;
 }
-
 
 .name-column {
   float: left;
   padding: 5px 0 5px 35px;
   width: 20%;
   text-align: left;
-  
 }
 
 .mail-column {
@@ -101,6 +98,7 @@
   border: none;
   background: #FFFFFF;
 }
+
 .button-delete {
   margin-left: 20px;
   text-align: right;
