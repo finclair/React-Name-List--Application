@@ -35,14 +35,35 @@ class NameListItem extends Component {
 
   render() {
     return (
-      <div className="row person">
-        <div className="name-column">{this.state.name}</div>
-        <div className="mail-column">{this.state.e_mail}</div>
-        <div className="phone-column">{this.state.phone}</div>
-        <div className="buttons-column">
-          <button onClick={this.showEditForm} className="button-modify"><span className="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
-          <button onClick={() => this.state.deletingPerson(this.state.id)} className="button-delete"><span className="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-        </div>
+      <div>
+      {this.state.id !== this.state.editingId ? <div className="row person">
+          <div className="name-column">{this.state.name}</div>
+          <div className="mail-column">{this.state.e_mail}</div>
+          <div className="phone-column">{this.state.phone}</div>
+          <div className="buttons-column">
+            <button onClick={this.showEditForm} className="button-modify"><span className="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
+            <button onClick={() => this.state.deletingPerson(this.state.id)} className="button-delete"><span className="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+          </div>
+        </div> : <div>
+            <form className="form-edit" onSubmit={this.onEditFormSubmit}>
+              <div className="row">
+                <input
+                  className="input-field col-sm-2" 
+                  value={this.state.name}
+                  onChange={this.onNameInputChange} 
+                />
+                <input className="input-field col-sm-3" 
+                  value={this.state.e_mail}
+                  onChange={this.onEmailInputChange} 
+                />
+                <input className="input-field col-sm-2"  
+                  value={this.state.phone}
+                  onChange={this.onPhoneInputChange}
+                />
+                <button className="button-edit col-sm-2 pull-right">Edit</button>
+              </div>
+            </form>
+          </div>}
       </div>
     );
   }    
