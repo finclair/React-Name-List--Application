@@ -80,7 +80,6 @@ class App extends Component {
       nameEdit: person.name,
       emailEdit: person.e_mail,
       phoneEdit: person.phone,
-      isEditing: true,
       editingId: person.id,
     });
   }
@@ -99,7 +98,7 @@ class App extends Component {
         return person;
       }
     });
-    this.setState({ persons: editedPersons, isEditing: false }); 
+    this.setState({ persons: editedPersons, editingId: -1 }); 
   }
 
   deletePerson(idx) {
