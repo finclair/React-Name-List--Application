@@ -93,7 +93,6 @@ class App extends Component {
           e_mail: editedData.e_mail,
           phone: editedData.phone
         };
-
       } else {
         return person;
       }
@@ -119,7 +118,7 @@ class App extends Component {
             persons={ this.state.persons }
             onNameColumnClick={this.sortPersons}
             deletingPerson={this.deletePerson}
-            showEditForm={this.showEditForm}
+            editingPerson={this.showEditForm}
             sortAlphabetically={this.state.sortAlphabetically}
             editingId={this.state.editingId}
 

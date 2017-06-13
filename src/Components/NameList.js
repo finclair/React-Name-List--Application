@@ -7,7 +7,7 @@ const NameList = (props) => {
     return <NameListItem 
             key={person.id} person={person}
             deletingPerson={props.deletingPerson}
-            showEditForm={props.showEditForm} 
+            editingPerson={props.editingPerson} 
             editingId={props.editingId}
             onEditFormSubmit={props.onEditFormSubmit} 
             />

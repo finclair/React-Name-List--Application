@@ -4,7 +4,6 @@ class NameListItem extends Component {
   
   constructor(props) {
     super(props);
-    
     this.state = {
       id: this.props.person.id,
       name: this.props.person.name,
@@ -12,7 +11,7 @@ class NameListItem extends Component {
       phone: this.props.person.phone,
       deletingPerson: props.deletingPerson,
     }
-    this.showEditForm = this.showEditForm.bind(this);
+    this.editingPerson = this.editingPerson.bind(this);
 
     this.onNameInputChange = this.onNameInputChange.bind(this);
     this.onEmailInputChange = this.onEmailInputChange.bind(this);
@@ -30,9 +29,9 @@ class NameListItem extends Component {
     })
   }
 
-  showEditForm(event) {
+  editingPerson(event) {
     event.preventDefault();
-    this.props.showEditForm(this.state.id);
+    this.props.editingPerson(this.state.id);
   }
 
   onEditFormSubmit(event) {
@@ -49,7 +48,6 @@ class NameListItem extends Component {
   onPhoneInputChange(event) {
     this.setState({ phone: event.target.value });
   }
-
 
   render() {
     return (
@@ -78,7 +76,7 @@ class NameListItem extends Component {
           <div className="mail-column">{this.state.e_mail}</div>
           <div className="phone-column">{this.state.phone}</div>
           <div className="buttons-column">
-            <button onClick={this.showEditForm} className="button-modify"><span className="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
+            <button onClick={this.editingPerson} className="button-modify"><span className="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
             <button onClick={() => this.state.deletingPerson(this.state.id)} className="button-delete"><span className="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
           </div>
         </div>}
