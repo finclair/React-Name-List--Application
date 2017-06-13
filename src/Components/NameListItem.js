@@ -4,12 +4,14 @@ class NameListItem extends Component {
   
   constructor(props) {
     super(props);
+
     this.state = {
       id: this.props.person.id,
       name: this.props.person.name,
       e_mail: this.props.person.e_mail,
       phone: this.props.person.phone,
       deletingPerson: props.deletingPerson,
+      editingId: this.props.editingId,
     }
     this.showEditForm = this.showEditForm.bind(this);
 
@@ -27,6 +29,7 @@ class NameListItem extends Component {
       name: newprops.person.name,
       e_mail: newprops.person.e_mail,
       phone: newprops.person.phone,
+      editingId: newprops.editingId,
     })
   }
 

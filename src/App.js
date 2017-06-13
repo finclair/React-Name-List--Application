@@ -80,9 +80,9 @@ class App extends Component {
       nameEdit: person.name,
       emailEdit: person.e_mail,
       phoneEdit: person.phone,
-      isEditing: true
+      isEditing: true,
+      editingId: person.id,
     });
-
   }
 
   editPerson(editedData) {
@@ -129,6 +129,7 @@ class App extends Component {
             deletingPerson={this.deletePerson}
             showEditForm={this.showEditForm}
             sortAlphabetically={this.state.sortAlphabetically}
+            editingId={this.state.editingId}
             />
           </div>
         </div>
