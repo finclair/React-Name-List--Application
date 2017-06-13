@@ -2,9 +2,14 @@ import React from 'react';
 import NameListItem from './NameListItem';
 
 const NameList = (props) => {
-
+  
   const nameItems = props.persons.map((person) => {
-    return <NameListItem key={person.id} person={person} deletingPerson={props.deletingPerson} showEditForm={props.showEditForm}/>
+    return <NameListItem 
+            key={person.id} person={person}
+            deletingPerson={props.deletingPerson}
+            showEditForm={props.showEditForm} 
+            editingId={props.editingId}
+            />
   });
   const onNameColumnClick = props.onNameColumnClick;
   const arrowMark = props.sortAlphabetically ? "🡩" : "🡫";
