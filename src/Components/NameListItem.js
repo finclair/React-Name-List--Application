@@ -13,7 +13,7 @@ class NameListItem extends Component {
     this.editingPerson = this.editingPerson.bind(this);
     this.deletingPerson = this.deletingPerson.bind(this);
     this.onEditFormSubmit = this.onEditFormSubmit.bind(this);
-    this.doDiscarding = this.doDiscarding.bind(this);
+    this.onDiscardButtonClick = this.onDiscardButtonClick.bind(this);
 
     this.onNameInputChange = this.onNameInputChange.bind(this);
     this.onEmailInputChange = this.onEmailInputChange.bind(this);
@@ -57,8 +57,9 @@ class NameListItem extends Component {
     this.setState({ phone: event.target.value });
   }
   
-  doDiscarding(event) {
-    this.props.doDiscarding();
+  onDiscardButtonClick(event) {
+    this.props.onDiscardButtonClick();
+
   }
 
   render() {
@@ -81,7 +82,7 @@ class NameListItem extends Component {
                   onChange={this.onPhoneInputChange}
                 />
                 <button className="button-save-changes"><span className="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span></button>
-                <button onClick={this.doDiscarding} className="button-discard-changes" type="button"><span className="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                <button onClick={this.onDiscardButtonClick} className="button-discard-changes" type="button"><span className="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
               </div>
             </form>
           </div> : <div className="row person">

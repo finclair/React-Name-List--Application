@@ -10,7 +10,7 @@ const NameList = (props) => {
             editingPerson={props.editingPerson} 
             editingId={props.editingId}
             onEditFormSubmit={props.onEditFormSubmit} 
-            doDiscarding={props.doDiscarding}
+            onDiscardButtonClick={props.onDiscardButtonClick}
             />
   });
   const onNameColumnClick = props.onNameColumnClick;

@@ -127,7 +127,7 @@ class App extends Component {
             editingId={this.state.editingId}
 
             onEditFormSubmit={this.editPerson}
-            doDiscarding={this.discardEdit}
+            onDiscardButtonClick={this.discardEdit}
             />
           </div>
         </div>
