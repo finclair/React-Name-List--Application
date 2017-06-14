@@ -25,7 +25,6 @@ class App extends Component {
 
   componentDidMount() {
     this.ajaxRequest(data_file, (persons) => {
-
       this.setState({ persons: persons.Rows });
      });
   };
@@ -125,7 +124,6 @@ class App extends Component {
             editingPerson={this.showEditForm}
             sortAlphabetically={this.state.sortAlphabetically}
             editingId={this.state.editingId}
-
             onEditFormSubmit={this.editPerson}
             onDiscardButtonClick={this.discardEdit}
             />

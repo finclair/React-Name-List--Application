@@ -47,6 +47,10 @@ class NameListItem extends Component {
     this.props.onEditFormSubmit(this.state);
   }
 
+  onDiscardButtonClick(event) {
+    this.props.onDiscardButtonClick();
+  }
+
   onNameInputChange(event) {
     this.setState({ name: event.target.value });
   }
@@ -55,11 +59,6 @@ class NameListItem extends Component {
   }
   onPhoneInputChange(event) {
     this.setState({ phone: event.target.value });
-  }
-  
-  onDiscardButtonClick(event) {
-    this.props.onDiscardButtonClick();
-
   }
 
   render() {
