@@ -40,13 +40,13 @@
 }
 
 .button-save-changes {
-  margin: 15px 30px;
+  margin: 15px 0 30px 225px;
   text-align: right;
   background: #FFFFFF;
 }
 
 .button-discard-changes {
-  margin: 15px 30px;
+  margin: 15px 20px;
   text-align: right;
   background: #FFFFFF;
 }
@@ -58,10 +58,7 @@
 }
 
 .person {
-  border-top: thick solid #F1F1F1;
-  border: 1px;
   padding: 20px 0;
-  border-bottom: solid #F1F1F1;
 }
 
 .name-column-header {
