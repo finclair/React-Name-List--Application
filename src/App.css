@@ -61,6 +61,7 @@
   border-top: thick solid #F1F1F1;
   border: 1px;
   padding: 20px 0;
+  border-bottom: solid #F1F1F1;
 }
 
 .name-column-header {
