@@ -54,6 +54,11 @@ class NameListItem extends Component {
   onPhoneInputChange(event) {
     this.setState({ phone: event.target.value });
   }
+  
+  doDiscarding(event) {
+    //console.log("hello");
+    
+  }
 
   render() {
     return (
@@ -75,7 +80,7 @@ class NameListItem extends Component {
                   onChange={this.onPhoneInputChange}
                 />
                 <button className="button-save-changes"><span className="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span></button>
-                <button className="button-discard-changes "><span className="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                <button onClick={this.doDiscarding} className="button-discard-changes" type="button"><span className="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
               </div>
             </form>
           </div> : <div className="row person">
