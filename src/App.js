@@ -14,6 +14,7 @@ class App extends Component {
     this.deletePerson = this.deletePerson.bind(this);
     this.sortPersons = this.sortPersons.bind(this);
     this.editPerson = this.editPerson.bind(this);
+    this.discardEdit = this.discardEdit.bind(this);
     
     this.state = { 
       persons: [],
@@ -99,6 +100,10 @@ class App extends Component {
     this.setState({ persons: editedPersons, editingId: -1 }); 
   }
 
+  discardEdit() {
+    this.setState({ editingId: -1 }); 
+  }
+
   deletePerson(personId) {
     const newPersons = this.state.persons.filter(person => person.id !== personId);
     this.setState({ persons: newPersons });
@@ -122,6 +127,7 @@ class App extends Component {
             editingId={this.state.editingId}
 
             onEditFormSubmit={this.editPerson}
+            doDiscarding={this.discardEdit}
             />
           </div>
         </div>

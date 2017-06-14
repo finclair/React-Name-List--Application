@@ -13,12 +13,14 @@ class NameListItem extends Component {
     this.editingPerson = this.editingPerson.bind(this);
     this.deletingPerson = this.deletingPerson.bind(this);
     this.onEditFormSubmit = this.onEditFormSubmit.bind(this);
+    this.doDiscarding = this.doDiscarding.bind(this);
 
     this.onNameInputChange = this.onNameInputChange.bind(this);
     this.onEmailInputChange = this.onEmailInputChange.bind(this);
     this.onPhoneInputChange = this.onPhoneInputChange.bind(this);
-  }
 
+  }
+  
   componentWillReceiveProps(newprops) {
     this.setState({
       id: newprops.person.id,
@@ -56,8 +58,7 @@ class NameListItem extends Component {
   }
   
   doDiscarding(event) {
-    //console.log("hello");
-    
+    this.props.doDiscarding();
   }
 
   render() {
