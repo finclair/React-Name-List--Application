@@ -19,7 +19,6 @@ class App extends Component {
     this.state = { 
       persons: [],
       sortAlphabetically: true,
-      isEditing: false,
     };
   }
 
@@ -67,8 +66,7 @@ class App extends Component {
   }
 
   showEditForm(personId) {
-    if (this.state.isEditing) { return; }
-    
+
     function findCorrectPerson(person) {
       return person.id === personId;
     }
