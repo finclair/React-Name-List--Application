@@ -72,13 +72,7 @@ class App extends Component {
     }
     const person = this.state.persons.find(findCorrectPerson);
 
-    this.setState({ 
-      idEdit: person.id,
-      nameEdit: person.name,
-      emailEdit: person.e_mail,
-      phoneEdit: person.phone,
-      editingId: person.id,
-    });
+    this.setState({ editingId: person.id });
   }
 
   editPerson(editedData) {
