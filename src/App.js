@@ -67,11 +67,7 @@ class App extends Component {
   }
 
   showEditForm(personId) {
-
-    function findCorrectPerson(person) {
-      return person.id === personId;
-    }
-    const person = this.state.persons.find(findCorrectPerson);
+    const person = this.state.persons.find((person) => person.id === personId);
 
     this.setState({ editingId: person.id });
   }
