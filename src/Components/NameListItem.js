@@ -5,10 +5,10 @@ class NameListItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: this.props.person.id,
-      name: this.props.person.name,
-      e_mail: this.props.person.e_mail,
-      phone: this.props.person.phone,
+      id: props.person.id,
+      name: props.person.name,
+      e_mail: props.person.e_mail,
+      phone: props.person.phone,
     }
     this.editingPerson = this.editingPerson.bind(this);
     this.deletingPerson = this.deletingPerson.bind(this);
@@ -26,7 +26,6 @@ class NameListItem extends Component {
       name: newprops.person.name,
       e_mail: newprops.person.e_mail,
       phone: newprops.person.phone,
-      editingId: newprops.editingId,
     })
   }
 
@@ -57,7 +56,7 @@ class NameListItem extends Component {
   render() {
     return (
       <div>
-      {this.state.id === this.state.editingId ? 
+      {this.state.id === this.props.editingId ? 
             <form className="form-edit" onSubmit={this.onEditFormSubmit}>
               <div className="row">
                 <input
