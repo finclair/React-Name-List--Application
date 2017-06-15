@@ -19,6 +19,7 @@ class App extends Component {
     this.state = { 
       persons: [],
       sortAlphabetically: true,
+      editingId: null,
     };
   }
 
