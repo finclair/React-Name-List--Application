@@ -96,11 +96,11 @@ class App extends Component {
         return person;
       }
     });
-    this.setState({ persons: editedPersons, editingId: -1 }); 
+    this.setState({ persons: editedPersons, editingId: null }); 
   }
 
   discardEdit() {
-    this.setState({ editingId: -1 }); 
+    this.setState({ editingId: null }); 
   }
 
   deletePerson(personId) {
