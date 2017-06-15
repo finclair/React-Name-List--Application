@@ -7,7 +7,7 @@ const data_file = './data.json';
 
 class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.addPerson = this.addPerson.bind(this);
     this.showEditForm = this.showEditForm.bind(this);

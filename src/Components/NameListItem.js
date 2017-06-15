@@ -13,7 +13,6 @@ class NameListItem extends Component {
     this.editingPerson = this.editingPerson.bind(this);
     this.deletingPerson = this.deletingPerson.bind(this);
     this.onEditFormSubmit = this.onEditFormSubmit.bind(this);
-    this.onDiscardButtonClick = this.onDiscardButtonClick.bind(this);
 
     this.onNameInputChange = this.onNameInputChange.bind(this);
     this.onEmailInputChange = this.onEmailInputChange.bind(this);
