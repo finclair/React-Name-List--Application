@@ -30,13 +30,11 @@ class NameListItem extends Component {
     })
   }
 
-  editingPerson(event) {
-    event.preventDefault();
+  editingPerson() {
     this.props.editingPerson(this.state.id);
   }
 
-  deletingPerson(event) {
-    event.preventDefault();
+  deletingPerson() {
     this.props.deletingPerson(this.state.id);
   }
 

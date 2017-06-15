@@ -5,7 +5,8 @@ const NameList = (props) => {
   
   const nameItems = props.persons.map((person) => {
     return <NameListItem 
-            key={person.id} person={person}
+            key={person.id} 
+            person={person}
             deletingPerson={props.deletingPerson}
             editingPerson={props.editingPerson} 
             editingId={props.editingId}
