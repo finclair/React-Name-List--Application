@@ -57,7 +57,7 @@ class NameListItem extends Component {
   render() {
     return (
       <div>
-      {this.state.id === this.state.editingId ? <div>
+      {this.state.id === this.state.editingId ? 
             <form className="form-edit" onSubmit={this.onEditFormSubmit}>
               <div className="row">
                 <input
@@ -73,17 +73,24 @@ class NameListItem extends Component {
                   value={this.state.phone}
                   onChange={this.onPhoneInputChange}
                 />
-                <button className="button-save-changes"><span className="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span></button>
-                <button onClick={this.props.onDiscardButtonClick} className="button-discard-changes" type="button"><span className="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                <button className="button-save-changes">
+                  <span className="glyphicon glyphicon-floppy-disk" aria-hidden="true" />
+                </button>
+                <button onClick={this.props.onDiscardButtonClick} className="button-discard-changes" type="button">
+                  <span className="glyphicon glyphicon-trash" aria-hidden="true" />
+                </button>
               </div>
-            </form>
-          </div> : <div className="row person">
+            </form> : <div className="row person">
           <div className="name-column">{this.state.name}</div>
           <div className="mail-column">{this.state.e_mail}</div>
           <div className="phone-column">{this.state.phone}</div>
           <div className="buttons-column">
-            <button onClick={this.editingPerson} className="button-modify"><span className="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
-            <button onClick={this.deletingPerson} className="button-delete"><span className="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+            <button onClick={this.editingPerson} className="button-modify">
+              <span className="glyphicon glyphicon-pencil" aria-hidden="true" />
+            </button>
+            <button onClick={this.deletingPerson} className="button-delete">
+              <span className="glyphicon glyphicon-remove" aria-hidden="true" />
+            </button>
           </div>
         </div>}
       </div>
