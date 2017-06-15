@@ -47,10 +47,6 @@ class NameListItem extends Component {
     this.props.onEditFormSubmit(this.state);
   }
 
-  onDiscardButtonClick(event) {
-    this.props.onDiscardButtonClick();
-  }
-
   onNameInputChange(event) {
     this.setState({ name: event.target.value });
   }
