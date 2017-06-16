@@ -56,8 +56,8 @@ class App extends Component {
     const tempPersons = this.state.persons;
 
     const sortedPersons = tempPersons.sort((sample1, sample2) => {
-      const a = sample1.name.toLowerCase();
-      const b = sample2.name.toLowerCase();
+      const a = sample1.name.first.toLowerCase();
+      const b = sample2.name.first.toLowerCase();
       
       return (a < b) ? -1 : (a > b) ? 1 : 0;
     });
@@ -98,7 +98,7 @@ class App extends Component {
   }
 
   deletePerson(personId) {
-    const newPersons = this.state.persons.filter(person => person.id !== personId);
+    const newPersons = this.state.persons.filter(person => person.dob !== personId);
     this.setState({ persons: newPersons });
   }
 
