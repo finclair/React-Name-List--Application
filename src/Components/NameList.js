@@ -2,10 +2,10 @@ import React from 'react';
 import NameListItem from './NameListItem';
 
 const NameList = (props) => {
-  
+  console.log(props.persons);
   const nameItems = props.persons.map((person) => {
     return <NameListItem 
-            key={person.id} 
+            key={person.dob} 
             person={person}
             deletingPerson={props.deletingPerson}
             editingPerson={props.editingPerson} 

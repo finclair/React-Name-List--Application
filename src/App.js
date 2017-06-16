@@ -3,7 +3,9 @@ import './App.css';
 import InputFields from './Components/InputFields';
 import NameList from './Components/NameList';
 
-const data_file = './data.json';
+//const data_file = './data.json';
+const url = 'https://randomuser.me/api/?results=5';
+
 
 class App extends Component {
   constructor(props) {
@@ -24,9 +26,12 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.ajaxRequest(data_file, (persons) => {
-      this.setState({ persons: persons.Rows });
-     });
+
+    this.ajaxRequest(url, (data) => {
+
+      this.setState({ persons: data.results });
+    });
+
   };
 
   ajaxRequest(file, callback) {
