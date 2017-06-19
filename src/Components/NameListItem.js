@@ -75,7 +75,7 @@ class NameListItem extends Component {
                   <span className="glyphicon glyphicon-floppy-disk" aria-hidden="true" />
                 </button>
                 <button onClick={this.props.onDiscardButtonClick} className="button-discard-changes" type="button">
-                  <span className="glyphicon glyphicon-trash" aria-hidden="true" />
+                  <span className="glyphicon glyphicon-remove" aria-hidden="true" />
                 </button>
               </div>
             </form> : <div className="row person">
@@ -87,7 +87,7 @@ class NameListItem extends Component {
               <span className="glyphicon glyphicon-pencil" aria-hidden="true" />
             </button>
             <button onClick={this.deletingPerson} className="button-delete">
-              <span className="glyphicon glyphicon-remove" aria-hidden="true" />
+              <span className="glyphicon glyphicon-trash" aria-hidden="true" />
             </button>
           </div>
         </div>}
