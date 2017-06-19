@@ -3,7 +3,7 @@ import './App.css';
 import InputFields from './Components/InputFields';
 import NameList from './Components/NameList';
 
-const url = 'https://randomuser.me/api/?results=5';
+const url = 'https://randomuser.me/api/?results=7';
 
 class App extends Component {
   constructor(props) {
@@ -26,9 +26,7 @@ class App extends Component {
   componentDidMount() {
 
     this.ajaxRequest(url, (data) => {
-
       const parsedData = data.results.map((result) => {
-        
         return {
           id: result.dob,
           name: result.name.first,
@@ -36,7 +34,6 @@ class App extends Component {
           phone: result.cell
         }
       });
-
       this.setState({ persons: parsedData });
     });
   };
@@ -119,14 +116,14 @@ class App extends Component {
               onFormSubmit={this.addPerson} 
             />
             <NameList
-            persons={ this.state.persons }
-            onNameColumnClick={this.sortPersons}
-            deletingPerson={this.deletePerson}
-            editingPerson={this.showEditForm}
-            sortAlphabetically={this.state.sortAlphabetically}
-            editingId={this.state.editingId}
-            onEditFormSubmit={this.editPerson}
-            onDiscardButtonClick={this.discardEdit}
+              persons={ this.state.persons }
+              onNameColumnClick={this.sortPersons}
+              deletingPerson={this.deletePerson}
+              editingPerson={this.showEditForm}
+              sortAlphabetically={this.state.sortAlphabetically}
+              editingId={this.state.editingId}
+              onEditFormSubmit={this.editPerson}
+              onDiscardButtonClick={this.discardEdit}
             />
           </div>
         </div>
