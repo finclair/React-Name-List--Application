@@ -17,7 +17,6 @@ class NameListItem extends Component {
     this.onNameInputChange = this.onNameInputChange.bind(this);
     this.onEmailInputChange = this.onEmailInputChange.bind(this);
     this.onPhoneInputChange = this.onPhoneInputChange.bind(this);
-
   }
   
   componentWillReceiveProps(newprops) {

@@ -3,9 +3,7 @@ import './App.css';
 import InputFields from './Components/InputFields';
 import NameList from './Components/NameList';
 
-//const data_file = './data.json';
 const url = 'https://randomuser.me/api/?results=5';
-
 
 class App extends Component {
   constructor(props) {
@@ -41,7 +39,6 @@ class App extends Component {
 
       this.setState({ persons: parsedData });
     });
-
   };
 
   ajaxRequest(file, callback) {
