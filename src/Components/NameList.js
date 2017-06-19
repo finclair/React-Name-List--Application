@@ -5,7 +5,7 @@ const NameList = (props) => {
   console.log(props.persons);
   const nameItems = props.persons.map((person) => {
     return <NameListItem 
-            key={person.dob} 
+            key={person.id} 
             person={person}
             deletingPerson={props.deletingPerson}
             editingPerson={props.editingPerson} 

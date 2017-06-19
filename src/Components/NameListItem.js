@@ -5,9 +5,9 @@ class NameListItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: props.person.dob,
-      name: props.person.name.first,
-      e_mail: props.person.email,
+      id: props.person.id,
+      name: props.person.name,
+      e_mail: props.person.e_mail,
       phone: props.person.phone,
     }
     this.editingPerson = this.editingPerson.bind(this);
@@ -22,9 +22,9 @@ class NameListItem extends Component {
   
   componentWillReceiveProps(newprops) {
     this.setState({
-      id: newprops.person.dob,
-      name: newprops.person.name.first,
-      e_mail: newprops.person.email,
+      id: newprops.person.id,
+      name: newprops.person.name,
+      e_mail: newprops.person.e_mail,
       phone: newprops.person.phone,
     })
   }
