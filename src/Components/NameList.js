@@ -2,7 +2,6 @@ import React from 'react';
 import NameListItem from './NameListItem';
 
 const NameList = (props) => {
-  console.log(props.persons);
   const nameItems = props.persons.map((person) => {
     return <NameListItem 
             key={person.id} 
@@ -22,7 +21,7 @@ const NameList = (props) => {
       <div className="row">
         <div className="name-column-header name-column" onClick={() => onDataColumnClick("name")}>Name {arrowMark}</div>
         <div className="mail-column">E-mail address</div>
-        <div className="phone-column-header phone-column" onClick={() => onDataColumnClick("phone")}>Phone number {arrowMark}</div>
+        <div className="phone-column-header phone-column" onClick={() => onDataColumnClick("phone")}>Phone number</div>
       </div>
       {nameItems}
     </div>
