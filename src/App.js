@@ -56,13 +56,13 @@ class App extends Component {
     this.setState({ persons: newPersons });
   }
 
-  sortPersons() {
+  sortPersons(feature) {
     const sortAlphabetically = this.state.sortAlphabetically;
     const tempPersons = this.state.persons;
 
     const sortedPersons = tempPersons.sort((sample1, sample2) => {
-      const a = sample1.name.toLowerCase();
-      const b = sample2.name.toLowerCase();
+      const a = sample1[feature].toLowerCase();
+      const b = sample2[feature].toLowerCase();
       
       return (a < b) ? -1 : (a > b) ? 1 : 0;
     });
@@ -118,7 +118,7 @@ class App extends Component {
             />
             <NameList
               persons={ this.state.persons }
-              onNameColumnClick={this.sortPersons}
+              onDataColumnClick={this.sortPersons}
               deletingPerson={this.deletePerson}
               editingPerson={this.showEditForm}
               sortAlphabetically={this.state.sortAlphabetically}

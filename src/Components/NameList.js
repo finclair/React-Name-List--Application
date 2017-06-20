@@ -14,13 +14,13 @@ const NameList = (props) => {
             onDiscardButtonClick={props.onDiscardButtonClick}
             />
   });
-  const onNameColumnClick = props.onNameColumnClick;
+  const onDataColumnClick = props.onDataColumnClick;
   const arrowMark = props.sortAlphabetically ? "🡩" : "🡫";
 
   return (
     <div className="name-list group">
-      <div className="row ">
-        <div className="name-column-header name-column" onClick={() => onNameColumnClick()}>Name {arrowMark}</div>
+      <div className="row">
+        <div className="name-column-header name-column" onClick={() => onDataColumnClick("name")}>Name {arrowMark}</div>
         <div className="mail-column">E-mail address</div>
         <div className="phone-column">Phone number</div>
       </div>
