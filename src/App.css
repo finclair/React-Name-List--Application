@@ -81,6 +81,11 @@
   text-align: left;
 }
 
+.phone-column-header {
+  cursor: pointer;
+  cursor: hand;
+}
+
 .phone-column {
  float: left;
  padding: 5px 0 5px 5px;
