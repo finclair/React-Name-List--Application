@@ -27,7 +27,7 @@ class App extends Component {
 
     this.ajaxRequest(url, (data) => {
       const parsedData = data.results.map((result) => {
-        const wholeName = `${result.name.first + " " + result.name.last}`; 
+        const wholeName = `${result.name.first} ${result.name.last}`; 
         return {
           id: result.dob,
           name: wholeName,
