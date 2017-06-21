@@ -20,7 +20,7 @@ const NameList = (props) => {
     <div className="name-list group">
       <div className="row">
         <div className="name-column-header name-column" onClick={() => onDataColumnClick("name")}>Name {arrowMark}</div>
-        <div className="mail-column">E-mail address</div>
+        <div className="mail-column-header mail-column" onClick={() => onDataColumnClick("e_mail")}>E-mail address</div>
         <div className="phone-column-header phone-column" onClick={() => onDataColumnClick("phone")}>Phone number</div>
       </div>
       {nameItems}
