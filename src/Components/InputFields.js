@@ -38,15 +38,15 @@ class InputFields extends Component {
         <form className="add-new" onSubmit={this.onFormSubmit}>
           <div className="row">
             <input
-              className="input-field col-sm-2" placeholder="Full Name"
+              className="input-field col-sm-2" placeholder="Full name"
               value={this.state.name}
               onChange={this.onNameInputChange} 
              />
-            <input className="input-field col-sm-3" placeholder="E-mail Address" 
+            <input className="input-field col-sm-3" placeholder="E-mail address" 
               value={this.state.e_mail}
               onChange={this.onEmailInputChange} 
             />
-            <input className="input-field col-sm-2" placeholder="Phone Number" 
+            <input className="input-field col-sm-2" placeholder="Phone number" 
               value={this.state.phone}
               onChange={this.onPhoneInputChange} 
             />

@@ -26,6 +26,8 @@
   padding: 7px;
   font-size: 18px;
   background: #FAFAFA;
+  border: solid;
+  border-color: #EEEEEE;
 }
 
 .button-add {
@@ -34,6 +36,7 @@
   font-size: 20px;
   background: #EDEDED;
   color: #858585;
+  border: none;
 }
 
 .form-edit {
