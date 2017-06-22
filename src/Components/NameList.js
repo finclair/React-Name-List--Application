@@ -16,12 +16,22 @@ const NameList = (props) => {
   const onDataColumnClick = props.onDataColumnClick;
   const arrowMark = props.sortAlphabetically ? "🡩" : "🡫";
 
+  function showArrow(feature) {
+    return feature === props.sortBy ? arrowMark : "";
+  }
+
   return (
     <div className="name-list group">
       <div className="row">
-        <div className="name-column-header name-column" onClick={() => onDataColumnClick("name")}>Name {arrowMark}</div>
-        <div className="mail-column-header mail-column" onClick={() => onDataColumnClick("e_mail")}>E-mail address</div>
-        <div className="phone-column-header phone-column" onClick={() => onDataColumnClick("phone")}>Phone number</div>
+        <div className="name-column-header name-column" onClick={ () => onDataColumnClick("name") }>
+          Name {showArrow("name")}
+        </div>
+        <div className="mail-column-header mail-column" onClick={() => onDataColumnClick("e_mail")}>
+          E-mail address {showArrow("e_mail")}
+        </div>
+        <div className="phone-column-header phone-column" onClick={() => onDataColumnClick("phone")}>
+          Phone number {showArrow("phone")}
+        </div>
       </div>
       {nameItems}
     </div>

@@ -20,6 +20,7 @@ class App extends Component {
       persons: [],
       sortAlphabetically: true,
       editingId: null,
+      sortBy: "name",
     };
   }
 
@@ -68,11 +69,11 @@ class App extends Component {
     });
     
     if (sortAlphabetically === true) {
-      this.setState({ persons: sortedPersons, sortAlphabetically: false });
+      this.setState({ persons: sortedPersons, sortAlphabetically: false, sortBy: feature });
     }
     else {
       sortedPersons.reverse();
-      this.setState({ persons: sortedPersons, sortAlphabetically: true });
+      this.setState({ persons: sortedPersons, sortAlphabetically: true, sortBy: feature });
     }
   }
 
@@ -122,6 +123,7 @@ class App extends Component {
               deletingPerson={this.deletePerson}
               editingPerson={this.showEditForm}
               sortAlphabetically={this.state.sortAlphabetically}
+              sortBy={this.state.sortBy}
               editingId={this.state.editingId}
               onEditFormSubmit={this.editPerson}
               onDiscardButtonClick={this.discardEdit}
