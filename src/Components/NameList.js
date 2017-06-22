@@ -26,8 +26,8 @@ const NameList = (props) => {
         <div className="name-column-header name-column" onClick={ () => onDataColumnClick("name") }>
           Name {showArrow("name")}
         </div>
-        <div className="mail-column-header mail-column" onClick={() => onDataColumnClick("e_mail")}>
-          E-mail address {showArrow("e_mail")}
+        <div className="mail-column-header mail-column" onClick={() => onDataColumnClick("email")}>
+          E-mail address {showArrow("email")}
         </div>
         <div className="phone-column-header phone-column" onClick={() => onDataColumnClick("phone")}>
           Phone number {showArrow("phone")}

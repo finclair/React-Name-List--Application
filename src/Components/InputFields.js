@@ -5,7 +5,7 @@ class InputFields extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {name: '', e_mail: '', phone: '', id: 6};
+    this.state = {name: '', email: '', phone: '', id: 6};
     
     this.onNameInputChange = this.onNameInputChange.bind(this);
     this.onEmailInputChange = this.onEmailInputChange.bind(this);
@@ -19,17 +19,17 @@ class InputFields extends Component {
   }
 
   onEmailInputChange(event) {
-    this.setState({ e_mail: event.target.value });
+    this.setState({ email: event.target.value });
   }
   onPhoneInputChange(event) {
     this.setState({ phone: event.target.value });
   }
   onFormSubmit(event) {
     event.preventDefault();
-    if (this.state.name === "" || this.state.e_mail === "" || this.state.phone === "") { return; }
+    if (this.state.name === "" || this.state.email === "" || this.state.phone === "") { return; }
     this.setState({ id: this.state.id + 1 });
     this.props.onFormSubmit(this.state);
-    this.setState({name: '', e_mail: '', phone: '',});
+    this.setState({name: '', email: '', phone: '',});
   }
 
   render() {
@@ -43,7 +43,7 @@ class InputFields extends Component {
               onChange={this.onNameInputChange} 
              />
             <input className="input-field col-sm-3" placeholder="E-mail address" 
-              value={this.state.e_mail}
+              value={this.state.email}
               onChange={this.onEmailInputChange} 
             />
             <input className="input-field col-sm-2" placeholder="Phone number" 

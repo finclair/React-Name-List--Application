@@ -32,7 +32,7 @@ class App extends Component {
         return {
           id: result.dob,
           name: wholeName,
-          e_mail: result.email,
+          email: result.email,
           phone: result.cell
         }
       });
@@ -89,7 +89,7 @@ class App extends Component {
         return {
           id: editedData.id,
           name: editedData.name,
-          e_mail: editedData.e_mail,
+          email: editedData.email,
           phone: editedData.phone
         };
       } else {

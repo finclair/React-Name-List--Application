@@ -7,7 +7,7 @@ class NameListItem extends Component {
     this.state = {
       id: props.person.id,
       name: props.person.name,
-      e_mail: props.person.e_mail,
+      email: props.person.email,
       phone: props.person.phone,
     }
     this.editingPerson = this.editingPerson.bind(this);
@@ -23,7 +23,7 @@ class NameListItem extends Component {
     this.setState({
       id: newprops.person.id,
       name: newprops.person.name,
-      e_mail: newprops.person.e_mail,
+      email: newprops.person.email,
       phone: newprops.person.phone,
     })
   }
@@ -38,7 +38,7 @@ class NameListItem extends Component {
 
   onEditFormSubmit(event) {
     event.preventDefault();
-    if (this.state.name === "" || this.state.e_mail === "" || this.state.phone === "") { return; }
+    if (this.state.name === "" || this.state.email === "" || this.state.phone === "") { return; }
     this.props.onEditFormSubmit(this.state);
   }
 
@@ -46,7 +46,7 @@ class NameListItem extends Component {
     this.setState({ name: event.target.value });
   }
   onEmailInputChange(event) {
-    this.setState({ e_mail: event.target.value });
+    this.setState({ email: event.target.value });
   }
   onPhoneInputChange(event) {
     this.setState({ phone: event.target.value });
@@ -64,7 +64,7 @@ class NameListItem extends Component {
                   onChange={this.onNameInputChange} 
                 />
                 <input className="input-field col-sm-3" 
-                  value={this.state.e_mail}
+                  value={this.state.email}
                   onChange={this.onEmailInputChange} 
                 />
                 <input className="input-field col-sm-2"  
@@ -80,7 +80,7 @@ class NameListItem extends Component {
               </div>
             </form> : <div className="row person">
           <div className="name-column">{this.state.name}</div>
-          <div className="mail-column">{this.state.e_mail}</div>
+          <div className="mail-column">{this.state.email}</div>
           <div className="phone-column">{this.state.phone}</div>
           <div className="buttons-column">
             <button onClick={this.editingPerson} className="button-modify">
