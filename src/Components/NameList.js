@@ -22,7 +22,7 @@ const NameList = (props) => {
 
   return (
     <div className="name-list group">
-      <div className="row">
+      <div className="row column-headers">
         <div className="name-column-header name-column" onClick={ () => onDataColumnClick("name") }>
           Name {showArrow("name")}
         </div>

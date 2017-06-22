@@ -64,6 +64,12 @@
 
 .person {
   padding: 20px 0;
+  border-style: solid;
+  border-color: #F1F1F1;
+}
+
+.column-headers {
+  padding: 10px 0;
 }
 
 .name-column-header {
