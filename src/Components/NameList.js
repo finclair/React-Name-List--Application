@@ -14,7 +14,7 @@ const NameList = (props) => {
             />
   });
   const onDataColumnClick = props.onDataColumnClick;
-  const arrowMark = props.changeArrowDirection ? "🡩" : "🡫";
+  const arrowMark = props.changeArrowDirection === 'up' ? "🡩" : "🡫";
 
   function showArrow(feature) {
     return feature === props.sortBy ? arrowMark : "";

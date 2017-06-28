@@ -67,18 +67,17 @@ class App extends Component {
       return (a < b) ? -1 : (a > b) ? 1 : 0;
     });
     
-        
     if (feature === this.state.sortBy) {
-      if (this.state.changeArrowDirection === true) {
-        this.setState({ persons: sortedPersons, changeArrowDirection: false, sortBy: feature });
+      if (this.state.changeArrowDirection === 'up') {
+        this.setState({ persons: sortedPersons, changeArrowDirection: 'down', sortBy: feature });
       } 
       else {
-        this.setState({ persons: sortedPersons, changeArrowDirection: true, sortBy: feature });
+        this.setState({ persons: sortedPersons, changeArrowDirection: 'up', sortBy: feature });
       }
     }
     else {
       sortedPersons.reverse();
-      this.setState({ persons: sortedPersons, changeArrowDirection: false, sortBy: feature }); 
+      this.setState({ persons: sortedPersons, changeArrowDirection: 'down', sortBy: feature }); 
     }
   }
 
