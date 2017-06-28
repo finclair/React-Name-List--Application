@@ -20,7 +20,7 @@ class App extends Component {
       persons: [],
       changeArrowDirection: true,
       editingId: null,
-      sortBy: "name",
+      sortBy: 'name',
     };
   }
 
