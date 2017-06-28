@@ -33,7 +33,7 @@ const NameList = (props) => {
           Phone number {showArrow("phone")}
         </div>
       </div>
-      {nameItems}
+      {props.persons.length === 0 ? <div className="message-info">The List is empty.. Feel free to add new one :)</div> : nameItems}
     </div>
   );
 };
