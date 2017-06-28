@@ -18,7 +18,7 @@ class App extends Component {
     
     this.state = { 
       persons: [],
-      sortAlphabetically: true,
+      changeArrowDirection: true,
       editingId: null,
       sortBy: "name",
     };
@@ -58,7 +58,6 @@ class App extends Component {
   }
 
   sortPersons(feature) {
-    const sortAlphabetically = this.state.sortAlphabetically;
     const tempPersons = this.state.persons;
 
     const sortedPersons = tempPersons.sort((sample1, sample2) => {
@@ -68,12 +67,18 @@ class App extends Component {
       return (a < b) ? -1 : (a > b) ? 1 : 0;
     });
     
-    if (sortAlphabetically === true) {
-      this.setState({ persons: sortedPersons, sortAlphabetically: false, sortBy: feature });
+        
+    if (feature === this.state.sortBy) {
+      if (this.state.changeArrowDirection === true) {
+        this.setState({ persons: sortedPersons, changeArrowDirection: false, sortBy: feature });
+      } 
+      else {
+        this.setState({ persons: sortedPersons, changeArrowDirection: true, sortBy: feature });
+      }
     }
     else {
       sortedPersons.reverse();
-      this.setState({ persons: sortedPersons, sortAlphabetically: true, sortBy: feature });
+      this.setState({ persons: sortedPersons, changeArrowDirection: false, sortBy: feature }); 
     }
   }
 
@@ -122,7 +127,7 @@ class App extends Component {
               onDataColumnClick={this.sortPersons}
               deletingPerson={this.deletePerson}
               editingPerson={this.showEditForm}
-              sortAlphabetically={this.state.sortAlphabetically}
+              changeArrowDirection={this.state.changeArrowDirection}
               sortBy={this.state.sortBy}
               editingId={this.state.editingId}
               onEditFormSubmit={this.editPerson}
