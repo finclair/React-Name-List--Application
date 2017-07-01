@@ -18,7 +18,7 @@ class App extends Component {
     
     this.state = { 
       persons: [],
-      changeArrowDirection: true,
+      isSortedAsc: true,
       editingId: null,
       sortBy: 'name',
     };
@@ -58,27 +58,16 @@ class App extends Component {
   }
 
   sortPersons(feature) {
-    const tempPersons = this.state.persons;
-
-    const sortedPersons = tempPersons.sort((sample1, sample2) => {
-      const a = sample1[feature].toLowerCase();
-      const b = sample2[feature].toLowerCase();
-      
-      return (a < b) ? -1 : (a > b) ? 1 : 0;
+    this.setState({
+      isSortedAsc: feature === this.state.sortBy ? !this.state.isSortedAsc : true,
+      persons: feature === this.state.sortBy ? [...this.state.persons].reverse() : [...this.state.persons].sort((sample1, sample2) => {
+        const a = sample1[feature].toLowerCase();
+        const b = sample2[feature].toLowerCase();
+        
+        return (a < b) ? -1 : (a > b) ? 1 : 0;
+      }),
+      sortBy: feature,                                           
     });
-    
-    if (feature === this.state.sortBy) {
-      if (this.state.changeArrowDirection === 'up') {
-        this.setState({ persons: sortedPersons, changeArrowDirection: 'down', sortBy: feature });
-      } 
-      else {
-        this.setState({ persons: sortedPersons, changeArrowDirection: 'up', sortBy: feature });
-      }
-    }
-    else {
-      sortedPersons.reverse();
-      this.setState({ persons: sortedPersons, changeArrowDirection: 'down', sortBy: feature }); 
-    }
   }
 
   showEditForm(personId) {
@@ -126,7 +115,7 @@ class App extends Component {
               onDataColumnClick={this.sortPersons}
               deletingPerson={this.deletePerson}
               editingPerson={this.showEditForm}
-              changeArrowDirection={this.state.changeArrowDirection}
+              changeArrowDirection={this.state.isSortedAsc}
               sortBy={this.state.sortBy}
               editingId={this.state.editingId}
               onEditFormSubmit={this.editPerson}
@@ -140,5 +129,3 @@ class App extends Component {
 }
 
 export default App;
-
-//To get started, edit src/App.js and save to reload.
